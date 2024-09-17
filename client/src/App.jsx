@@ -1,17 +1,28 @@
-import "./App.css";
+import { useContext } from "react";
 import Header from "./components/globals/Header";
 import Footer from "./components/globals/Footer";
 import { Outlet } from "react-router-dom";
+import { ThemeContext } from "./components/context/ThemeProvider";
+import ThemeProvider from "./components/context/ThemeProvider";
+import "./App.css";
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Outlet />
-      <Footer />
-        </>
+    const theme = useContext(ThemeContext);
+    console.log('%c⧭', 'color: #00a3cc', theme);
+
+    return (
+            <div className={`App ${theme}`}>
+                <Header />
+                <Outlet />
+                <Footer />
+            </div>
     );
+}
+export default function AppWrapper() {
+  return (
+      <ThemeProvider>
+          <App />
+      </ThemeProvider>
+  );
 
 }
-
-export default App;
