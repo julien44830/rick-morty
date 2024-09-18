@@ -1,11 +1,13 @@
+import { useState, useContext } from "react";
 import { useLoaderData } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { ThemeContext } from "../context/ThemeProvider";
 import Card from "../Card";
 
 export default function HomePage() {
+    const theme = useContext(ThemeContext);
+
     const data = useLoaderData();
     const [text, setText] = useState("");
-    console.log("%c⧭", "color: #ff0000", text);
 
     function handleChange(e) {
         setText(e.target.value);
@@ -18,17 +20,19 @@ export default function HomePage() {
     console.log(filteredResults.length);
 
     return (
-        <main>
-            <input
-                type="text"
-                placeholder="Trouve ton personnage"
-                onChange={handleChange}
-            />
-            {text.length === 0 ? (
-                " "
-            ) : (
-                <p>{`nombre de personnages trouvé ${filteredResults.length}`}</p>
-            )}
+        <main className={`main-${theme.theme}`}>
+            <section>
+                <input
+                    type="text"
+                    placeholder="Trouve ton personnage"
+                    onChange={handleChange}
+                />
+                {text.length === 0 ? (
+                    " "
+                ) : (
+                    <p>{`nombre de personnages trouvé ${filteredResults.length}`}</p>
+                )}
+            </section>
 
             {filteredResults.length > 0 ? (
                 filteredResults.map((e) => (
@@ -46,7 +50,7 @@ export default function HomePage() {
                         src="../../src/assets/rick_sanchez.png"
                         alt="pas de personnage trouvé"
                     />
-                    <p className="no-personnages">aucun personnage trouvé</p> 
+                    <p className="no-personnages">aucun personnage trouvé</p>
                 </section>
             )}
         </main>

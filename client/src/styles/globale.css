@@ -4,6 +4,7 @@
 @import "accueil.css";
 @import "footer.css";
 @import "toggle-theme.css";
+@import "card.css";
 
 :root {
     --primary-color: #272b33;
@@ -12,6 +13,8 @@
 
     --primary-font: "Freeman", sans-serif;
     --second-font: "Roboto", sans-serif;
+
+    --time-transition: 200ms;
 }
 
 * {
@@ -23,7 +26,8 @@ body {
 }
 
 main {
-    min-height: 100vh;
+    padding-top: 50px;
+    min-hieght: 1099px
 }
 
 h1,
@@ -54,3 +58,40 @@ input,
 a {
     font-family: var(--second-font);
 }
+
+
+.light{
+    transition: var(--time-transition);
+
+    background-color: var(--second-color);
+}
+
+.dark{
+    transition: var(--time-transition);
+
+    /* background-color: var(--primary-color) */
+}
+
+.main-light{
+    transition: var(--time-transition);
+
+    background-color: var(--third-color);
+}
+
+.main-dark{
+    transition: var(--time-transition);
+
+    background-color: var(--second-color);
+}
+
+.text-light{
+    transition: var(--time-transition);
+    color: black;
+}
+
+.text-dark{
+    transition: var(--time-transition);
+
+    color: white;
+}
+

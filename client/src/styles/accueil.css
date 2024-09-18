@@ -1,13 +1,18 @@
 .section-no-personnage{
   position: relative;
+  img{
+  
+    max-width: 100%;
+  }
 }
 
 .no-personnages{
   position: absolute;
   text-align: center;
-  width: 100%;
   top: 50%;
+  width: 100%;
   font-size: 5rem;
   background-color: #00000073;
   z-index: 5;
+  
 }

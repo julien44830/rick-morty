@@ -8,21 +8,20 @@ import "./App.css";
 
 function App() {
     const theme = useContext(ThemeContext);
-    console.log('%c⧭', 'color: #00a3cc', theme);
 
     return (
-            <div className={`App ${theme}`}>
-                <Header />
-                <Outlet />
-                <Footer />
-            </div>
+        <div className={`App ${theme}`}>
+            <Header theme={theme} />
+            <Outlet />
+            <Footer theme={theme} />
+        </div>
     );
 }
 export default function AppWrapper() {
-  return (
-      <ThemeProvider>
-          <App />
-      </ThemeProvider>
-  );
-
+    return (
+        <ThemeProvider>
+            <App />
+            {/* <HomePage/> */}
+        </ThemeProvider>
+    );
 }

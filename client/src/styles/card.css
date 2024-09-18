@@ -1,0 +1,27 @@
+figure {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: -5px 2px 20px #737373;
+    figcaption {
+        font-size: 1.5rem;
+        font-weight: 600;
+        height: 100%;
+    }
+}
+
+.card-light {
+  background-color: darkgrey;
+}
+
+.card-dark {
+  background-color: darkgrey;
+}
+
+.text-card-light {
+  color: white;
+}
+
+.text-card-dark {
+  color: black;
+}
